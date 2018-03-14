@@ -1,6 +1,6 @@
 <h1>My Quotes</h1>
 <hr>
-
+<app-quote-form></app-quote-form>
 <ul>
   <div *ngFor='let quote of quotes;let i = index'>
    <li id="{{i}}" appHighlightthrough>{{quote.name}} submited on {{quote.completeDate|date}}</li>
