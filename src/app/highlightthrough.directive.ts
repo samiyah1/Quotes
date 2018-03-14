@@ -5,6 +5,7 @@ import { Directive, ElementRef } from '@angular/core';
 })
 export class HighlightthroughDirective {
 
-  constructor(private elem: ElementRef) { }
-
+  constructor(private elem: ElementRef) {
+    this.elem.nativeElement.style.fontWeight = 'bold';
+  }
 }
