@@ -3,7 +3,7 @@
 
 <ul>
   <div *ngFor='let quote of quotes;let i = index'>
-   <li id="{{i}}" appHighlightthrough>{{quote.name}}</li>
+   <li id="{{i}}" appHighlightthrough>{{quote.name}} submited on {{quote.completeDate|time|underline}}</li>
 
     <button  (click)='showDetails(i)'>show quote</button>
  
