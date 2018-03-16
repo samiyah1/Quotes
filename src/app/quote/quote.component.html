@@ -8,7 +8,8 @@
     <button  (click)='showDetails(i)'>show quote</button>
  
  
- 
-    <app-quote-details  *ngIf="quote.showDescription" [quote]='quote'></app-quote-details>
+ <div class="row" *ngIf="quote.showDescription">
+    <app-quote-details   [quote]='quote' (isComplete)= 'deleteGoal($event,i)'></app-quote-details>
+</div>
 </div>
   </ul>

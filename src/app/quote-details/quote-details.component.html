@@ -1,2 +1,10 @@
 <p>{{quote.description}}</p>
+<p>{{quote.Author}} </p>
 <p>This quote was created  {{quote.completeDate|dateCount}} days ago</p>
+
+<button>
+    <i class= "fa fa-thumbs-o-up" [class.highlighted]="myVote==1" (click)="upVote()"></i> </button>
+    <button>
+        <span class="vote-count">{{ voteCount + myVote}}</span>
+    <i class= "fa fa-thumbs-down" [class.highlighted]="myVote==-1" (click)="downVote()"></i> </button>
+    <button (click)='quoteDelete(true)'>Delete Quote</button>

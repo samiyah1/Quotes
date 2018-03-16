@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url(assets/sad.jpg);
+font-family: 'Lobster', cursive;
+color: #29070ed0;
+font-size: 23px;
+}
+body{
+    background-repeat: no-repeat;
+    background-color: grey;
+}

@@ -1,0 +1,19 @@
+.form-group{
+    text-align: center;
+}
+#name{
+    margin-left: 500px;
+   width:300px;
+   text-align: center;
+}
+#description{
+    margin-left: 500px;
+    width:300px;
+    text-align: center;
+}
+#Author {
+    margin-left: 500px;
+    width:300px;
+    text-align: center;
+   
+}
