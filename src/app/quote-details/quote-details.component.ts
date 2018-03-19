@@ -11,13 +11,16 @@ export class QuoteDetailsComponent implements OnInit {
 @Input() voteCount = 0;
  @Input() myVote = 0;
 @Output() change = new EventEmitter();
-
+@Output() isComplete = new EventEmitter<boolean>();
+quoteDelete(complete: boolean) {
+    this.isComplete.emit(complete);
+  }
     upVote() {
         if (this.myVote === 1) {
             return;
         }
 
-        this.myVote++;
+        this.myVote += 1;
         this.emitEvent();
     }
 
@@ -26,14 +29,13 @@ export class QuoteDetailsComponent implements OnInit {
             return;
         }
 
-        this.myVote--;
+        this.myVote -= 1;
         this.emitEvent();
     }
 
     emitEvent() {
         this.change.emit({myVote: this.myVote});
     }
-
   constructor() { }
 
   ngOnInit() {

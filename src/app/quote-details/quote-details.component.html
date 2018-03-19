@@ -7,4 +7,5 @@
     <button>
         <span class="vote-count">{{ voteCount + myVote}}</span>
     <i class= "fa fa-thumbs-down" [class.highlighted]="myVote==-1" (click)="downVote()"></i> </button>
- 
+    <button class="btn btn-danger" (click) = 'quoteDelete(true)'>Delete Quote </button>
+    

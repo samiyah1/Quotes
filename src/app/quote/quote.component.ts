@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output , Input } from '@angular/core';
 import { Quote } from '../quote';
 @Component({
   selector: 'app-quote',
@@ -18,6 +18,7 @@ export class QuoteComponent implements OnInit {
 showDetails(index) {
   this.quotes[index].showDescription = !this.quotes[index].showDescription;
 }
+
 addNewQuote(quote) {
   const quotesLength = this.quotes.length;
   quote.id = quotesLength + 1;
@@ -27,7 +28,7 @@ addNewQuote(quote) {
 }
 deleteQuote(isComplete, index) {
   if (isComplete) {
-    const toDelete = confirm('Are you sure you want to delete ${this.quotes[index].name ?');
+    const toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}`);
     if (toDelete) {
       this.quotes.splice(index, 1);
     }
