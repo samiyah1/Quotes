@@ -7,38 +7,30 @@ import { NgModel } from '@angular/forms';
   styleUrls: ['./quote-details.component.css']
 })
 export class QuoteDetailsComponent implements OnInit {
-@Input() quote: Quote;
-@Input() voteCount = 0;
- @Input() myVote = 0;
+    likes: number;
+    disLikes: number;
+
+  @Input() quote: Quote;
 @Output() change = new EventEmitter();
 @Output() isComplete = new EventEmitter<boolean>();
 quoteDelete(complete: boolean) {
     this.isComplete.emit(complete);
   }
-    upVote() {
-        if (this.myVote === 1) {
-            return;
-        }
 
-        this.myVote += 1;
-        this.emitEvent();
-    }
+  constructor() {
+    this.likes = 0;
+    this.disLikes = 0;
+  }
+  voteUp(): boolean {
+    this.likes += 1;
+    return false;
+  }
 
-    downVote() {
-        if (this.myVote === -1) {
-            return;
-        }
-
-        this.myVote -= 1;
-        this.emitEvent();
-    }
-
-    emitEvent() {
-        this.change.emit({myVote: this.myVote});
-    }
-  constructor() { }
+  voteDown(): boolean {
+    this.disLikes += 1;
+    return false;
+  }
 
   ngOnInit() {
   }
-
-}
+   }
